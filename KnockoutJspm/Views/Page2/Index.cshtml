@@ -1,0 +1,19 @@
+﻿@using KnockoutJspm.Helpers
+
+@{
+    ViewBag.Title = "Page2";
+}
+
+<h2 data-bind="text: title"></h2>
+<div data-bind="component: 'component1'"></div>
+
+@section Scripts {
+    @if (!Html.IsDebug())
+    {
+        <script src="@Url.Content("~/Scripts/Bundle/Page2.js")"></script>
+    }
+    <script>
+        //System.import('./Scripts/AppStart/Page2');
+        System['import']('AppStart/Page2'); // Syntax for support IE8
+    </script>
+}
