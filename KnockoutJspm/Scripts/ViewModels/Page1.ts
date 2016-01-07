@@ -2,13 +2,17 @@
 // var _ = require('underscore'); // commonJS syntax
 // import * as _ from 'underscore'; // es6 syntax (typescript 1.5+ syntax)
 
+import Interface1 = require('../Interfaces/Interface1');
+
 class Page1
 {
-    private names = ['Olivier', 'Geoffroy', 'Nicolas', 'Stéphane'];
+    private model: Interface1 = {
+        names: ['Olivier', 'Geoffroy', 'Nicolas', 'Stéphane']
+    }
 
     constructor()
     {
-        console.log(_.first(this.names));
+        console.log(_.first(this.model.names));
     }
 }
 

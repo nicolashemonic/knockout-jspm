@@ -165,13 +165,13 @@
     <TypeScriptCompile Include="Scripts\AppStart\Page1.ts" />
     <TypeScriptCompile Include="Scripts\AppStart\Page2.ts" />
     <TypeScriptCompile Include="Scripts\CustomLoaders\TemplateFromUrl.ts" />
+    <TypeScriptCompile Include="Scripts\Interfaces\Interface1.ts" />
     <TypeScriptCompile Include="Scripts\Typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\node\node.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\tsd.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\underscore\underscore.d.ts" />
     <TypeScriptCompile Include="Scripts\ViewModels\Component1.ts" />
-    <TypeScriptCompile Include="Scripts\ViewModels\file1.ts" />
     <TypeScriptCompile Include="Scripts\ViewModels\Page1.ts" />
     <TypeScriptCompile Include="Scripts\ViewModels\Page2.ts" />
   </ItemGroup>

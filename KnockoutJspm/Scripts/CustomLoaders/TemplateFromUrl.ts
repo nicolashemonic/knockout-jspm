@@ -1,4 +1,5 @@
 ﻿import ko = require('knockout');
+import $ = require('jquery');
 
 var templateFromUrlLoader = {
     loadTemplate: (name, templateConfig, callback) => {
