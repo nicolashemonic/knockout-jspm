@@ -10,6 +10,7 @@ System.config({
   map: {
     "jquery": "github:components/jquery@1.11.3",
     "knockout": "github:knockout/knockout@3.3.0",
+    "ko-hello-world": "npm:ko-hello-world@1.0.4",
     "typescript": "npm:typescript@1.6.2",
     "underscore": "npm:underscore@1.8.3"
   }

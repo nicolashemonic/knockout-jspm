@@ -16,7 +16,7 @@ namespace KnockoutJspm
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{name}",
-                defaults: new { controller = "Page1", action = "Index", name = UrlParameter.Optional }
+                defaults: new { controller = "Page2", action = "Index", name = UrlParameter.Optional }
             );
         }
     }
