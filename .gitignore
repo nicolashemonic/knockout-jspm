@@ -197,8 +197,10 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 *.map
+
+# Generated scripts
 KnockoutJspm/Scripts/AppStart/*.js
 KnockoutJspm/Scripts/Bundle/*.js
 KnockoutJspm/Scripts/CustomLoaders/*.js
+KnockoutJspm/Scripts/Interfaces/*.js
 KnockoutJspm/Scripts/ViewModels/*.js
-
