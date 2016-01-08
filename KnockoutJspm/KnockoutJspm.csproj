@@ -149,6 +149,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Components\HelloWorld.cshtml" />
+    <Content Include="Scripts\tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -165,6 +166,7 @@
     <TypeScriptCompile Include="Scripts\AppStart\Page2.ts" />
     <TypeScriptCompile Include="Scripts\CustomLoaders\TemplateFromUrl.ts" />
     <TypeScriptCompile Include="Scripts\Interfaces\Interface1.ts" />
+    <TypeScriptCompile Include="Scripts\Services\Service1.ts" />
     <TypeScriptCompile Include="Scripts\Typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\node\node.d.ts" />
@@ -187,7 +189,7 @@
     <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile />
     <TypeScriptOutDir />

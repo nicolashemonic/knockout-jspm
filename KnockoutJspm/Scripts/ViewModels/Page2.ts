@@ -1,7 +1,5 @@
-﻿import ko = require('knockout');
+﻿import * as ko from 'knockout';
 
-class Page2 {
+export default class Page2 {
     public title = ko.observable<string>('Page Two!');
 }
-
-export = Page2;

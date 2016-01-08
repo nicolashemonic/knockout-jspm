@@ -3,4 +3,4 @@
     names: string[];
 }
 
-export = Interface1;
+export default Interface1;

@@ -1,8 +1,8 @@
-﻿import jQuery = require('jquery');
-import Page2 = require('../ViewModels/Page2');
-import templateFromUrlLoader = require('../CustomLoaders/TemplateFromUrl');
-import Component1 = require('../ViewModels/Component1');
-import HelloWorld = require('node_modules/ko-hello-world/ko-hello-world');
+﻿import * as jQuery from 'jquery';
+import Page2 from '../ViewModels/Page2';
+import templateFromUrlLoader from '../CustomLoaders/TemplateFromUrl';
+import Component1 from '../ViewModels/Component1';
+import HelloWorld from 'ko-hello-world';
 
 ko.components.loaders.unshift(templateFromUrlLoader);
 

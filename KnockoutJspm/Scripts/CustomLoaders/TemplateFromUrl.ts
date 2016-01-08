@@ -1,7 +1,7 @@
-﻿import ko = require('knockout');
-import $ = require('jquery');
+﻿import * as ko from 'knockout';
+import * as $ from 'jquery';
 
-var templateFromUrlLoader = {
+export default {
     loadTemplate: (name, templateConfig, callback) => {
         if (templateConfig.fromUrl) {
             // Uses jQuery's ajax facility to load the markup from a file
@@ -17,5 +17,3 @@ var templateFromUrlLoader = {
         }
     }
 };
-
-export = templateFromUrlLoader;
