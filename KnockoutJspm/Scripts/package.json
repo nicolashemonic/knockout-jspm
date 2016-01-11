@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gulp-rework": "^1.1.0",
     "typescript": "npm:typescript@^1.6.2"
   },
   "jspm": true,

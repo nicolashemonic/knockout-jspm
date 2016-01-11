@@ -119,9 +119,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\source.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\config.js" />
     <Content Include="Scripts\gulpfile.js" />
+    <Content Include="Scripts\source.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
