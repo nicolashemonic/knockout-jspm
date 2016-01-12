@@ -1,4 +1,5 @@
 ﻿import * as jQuery from 'jquery';
+import 'jquery-ui/datepicker';
 import * as ko from 'knockout';
 import Page2 from '../ViewModels/Page2';
 import templateFromUrlLoader from '../CustomLoaders/TemplateFromUrl';
@@ -11,6 +12,12 @@ ko.components.register('component1', {
     template: { fromUrl: '/Components/Load/Component1' }
 });
 
-jQuery(document).ready(() => {
+jQuery(document).ready(() =>
+{
     ko.applyBindings(new Page2());
+});
+
+jQuery(function ()
+{
+    jQuery("#datepicker").datepicker();
 });

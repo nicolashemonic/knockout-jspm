@@ -168,6 +168,7 @@
     <TypeScriptCompile Include="Scripts\CustomLoaders\TemplateFromUrl.ts" />
     <TypeScriptCompile Include="Scripts\Interfaces\Interface1.ts" />
     <TypeScriptCompile Include="Scripts\Services\Service1.ts" />
+    <TypeScriptCompile Include="Scripts\Typings\jqueryui\jqueryui.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\knockout\knockout.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\node\node.d.ts" />

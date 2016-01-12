@@ -10,6 +10,7 @@ System.config({
 
   map: {
     "jquery": "npm:jquery@2.2.0",
+    "jquery-ui": "npm:jquery-ui@1.10.5",
     "knockout": "npm:knockout@3.4.0",
     "underscore": "npm:underscore@1.8.3",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -26,6 +27,9 @@ System.config({
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:jquery-ui@1.10.5": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
     "npm:knockout@3.4.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
