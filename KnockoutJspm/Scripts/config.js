@@ -1,32 +1,41 @@
-var systemNormalize = System.normalize;
-
-System.normalize = function (name, parentName, parentAddress) {
-    if (name.indexOf('availpro-') > -1) {
-        var defaultJSExtension = this.defaultJSExtensions ? '.js' : '';
-        return this.baseURL + this.paths['availpro-*'].replace(new RegExp('availpro-\\*', 'g'), name) + defaultJSExtension;
-    }
-    return systemNormalize.call(this, name, parentName, parentAddress);
-}
-
-System.locate = function (load) {
-    console.log(load.name)
-    return load.name;
-}
-
 System.config({
-    baseURL: "/Scripts",
-    defaultJSExtensions: true,
-    transpiler: false,
-    paths: {
-        "npm:*": "jspm_packages/npm/*",
-        "github:*": "jspm_packages/github/*",
-        "availpro-*": "node_modules/availpro-*/availpro-*"
+  baseURL: "/Scripts",
+  defaultJSExtensions: true,
+  transpiler: false,
+  paths: {
+    "npm:*": "jspm_packages/npm/*",
+    "github:*": "jspm_packages/github/*",
+    "availpro-*": "node_modules/availpro-*/availpro-*"
+  },
+
+  map: {
+    "jquery": "npm:jquery@2.2.0",
+    "knockout": "npm:knockout@3.4.0",
+    "underscore": "npm:underscore@1.8.3",
+    "github:jspm/nodelibs-assert@0.1.0": {
+      "assert": "npm:assert@1.3.0"
     },
-    map: {
-        "jquery": "github:components/jquery@1.11.3",
-        "knockout": "github:knockout/knockout@3.3.0",
-        "ko-hello-world": "node_modules/ko-hello-world/ko-hello-world",
-        "typescript": "npm:typescript@1.6.2",
-        "underscore": "npm:underscore@1.8.3"
+    "github:jspm/nodelibs-process@0.1.2": {
+      "process": "npm:process@0.11.2"
+    },
+    "github:jspm/nodelibs-util@0.1.0": {
+      "util": "npm:util@0.10.3"
+    },
+    "npm:assert@1.3.0": {
+      "util": "npm:util@0.10.3"
+    },
+    "npm:inherits@2.0.1": {
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:knockout@3.4.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:process@0.11.2": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:util@0.10.3": {
+      "inherits": "npm:inherits@2.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     }
+  }
 });

@@ -1,5 +1,5 @@
 {
-  "name": "webapp2",
+  "name": "knockout-jspm",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -7,15 +7,19 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "gulp-rework": "^1.1.0",
-    "typescript": "npm:typescript@^1.6.2"
+  "jspm": {
+    "dependencies": {
+      "jquery": "npm:jquery@^2.2.0",
+      "knockout": "npm:knockout@^3.4.0",
+      "underscore": "npm:underscore@^1.8.3"
+    },
+    "devDependencies": {}
   },
-  "jspm": true,
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "jspm": "^0.16.22"
+  },
   "dependencies": {
-    "jquery": "github:components/jquery@1.11.3",
-    "knockout": "github:knockout/knockout@^3.3.0",
-    "ko-hello-world": "^1.0.6",
-    "underscore": "npm:underscore@^1.8.3"
+    "availpro-test": "^1.0.1"
   }
 }

@@ -1,9 +1,5 @@
 ﻿var gulp = require('gulp');
 var Builder = require('systemjs-builder');
-
-var rework = require('gulp-rework'),
-    reworkNPM = require('rework-npm');
-
 var inputPath = 'AppStart';
 var outputPath = 'Bundle';
 
@@ -13,7 +9,7 @@ function normalize(builder) {
     builder.loader.normalize = function (name, parentName, parentAddress) {
         if (name.indexOf('availpro-') > -1) {
             var defaultJSExtension = this.defaultJSExtensions ? '.js' : '';
-            return this.baseURL + this.paths['availpro-*'].replace(new RegExp('availpro-\\*', 'g'), name) + defaultJSExtension;
+            name = this.baseURL + this.paths['availpro-*'].replace(new RegExp('availpro-\\*', 'g'), name) + defaultJSExtension;
         }
         return systemNormalize.call(this, name, parentName, parentAddress);
     }
@@ -47,10 +43,4 @@ gulp.task('page2', function () {
 
 gulp.task('scripts', ['page1', 'page2'], function() {
     console.log('All scripts bundled!');
-});
-
-gulp.task('styles', function () {
-    return gulp.src('source.css')
-		.pipe(rework(reworkNPM()))
-		.pipe(gulp.dest('dist'));
 });
