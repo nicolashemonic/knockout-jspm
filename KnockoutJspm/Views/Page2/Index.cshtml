@@ -4,11 +4,17 @@
     ViewBag.Title = "Page2";
 }
 
-<h2 data-bind="text: title"></h2>
-<div data-bind="component: 'component1'"></div>
-<p>Date: <input type="text" id="datepicker"></p>
+<div class="wrapper">
+    <div class="content">
+        <h2 data-bind="text: title"></h2>
+        <div data-bind="component: 'component1'"></div>
+        <p>Date: <input type="text" id="datepicker"></p>
+    </div>
+</div>
 
 @section Scripts {
+    <link rel="stylesheet" href="@Url.Content("~/Content/Style.css")" />
+
     @if (!Html.IsDebug())
     {
         <script src="@Url.Content("~/Scripts/Bundle/Page2.js")"></script>

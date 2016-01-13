@@ -44,3 +44,14 @@ gulp.task('page2', function () {
 gulp.task('scripts', ['page1', 'page2'], function() {
     console.log('All scripts bundled!');
 });
+
+var less = require('gulp-less');
+var path = require('path');
+
+gulp.task('less', function () {
+    return gulp.src('../Content/Style.less')
+      .pipe(less({
+          paths: [path.join(__dirname, 'node_modules')]
+      }))
+      .pipe(gulp.dest('../Content'));
+});
