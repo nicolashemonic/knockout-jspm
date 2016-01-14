@@ -7,7 +7,6 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "availpro-*": "node_modules/availpro-*/availpro-*"
   },
-
   map: {
     "jquery": "npm:jquery@2.2.0",
     "jquery-ui": "npm:jquery-ui@1.10.5",

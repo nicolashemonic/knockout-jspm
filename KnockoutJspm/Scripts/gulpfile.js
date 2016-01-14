@@ -1,7 +1,12 @@
 ﻿var gulp = require('gulp');
+var watch = require('gulp-watch');
+var less = require('gulp-less');
+var cssnano = require('gulp-cssnano');
+var path = require('path');
 var Builder = require('systemjs-builder');
 var inputPath = 'AppStart';
 var outputPath = 'Bundle';
+var pages = ['page1', 'page2'];
 
 function normalize(builder) {
     var systemNormalize = builder.loader.normalize;
@@ -20,12 +25,13 @@ function normalize(builder) {
     }
 }
 
-function bundle(fileName) {
-    var builder = new Builder('/', 'config.js'); // sets the optionnal baseURL and loads the configuration file
+function bundleScript(fileName) {
+    var builder = new Builder('/', 'config.js');
     var fileInputPath = inputPath + '/' + fileName;
     var fileOutputPath = outputPath + '/' + fileName + '.js';
-    var bundleConfig = { minify: true };
+    var bundleConfig = {};
 
+    bundleConfig.minify = process.env.NODE_ENV && process.env.NODE_ENV == 'Release';
     normalize(builder);
 
     return builder
@@ -33,25 +39,43 @@ function bundle(fileName) {
         .catch(console.log);
 }
 
-gulp.task('page1', function () {
-    return bundle('Page1');
+function bundleStyle(fileName) {
+    var task = gulp.src('../Content/' + fileName + '.less')
+        .pipe(less({
+            paths: [path.join(__dirname, 'node_modules')]
+        }));
+
+    if (process.env.NODE_ENV && process.env.NODE_ENV == 'Release') {
+        task.pipe(cssnano());
+    }
+    return task.pipe(gulp.dest('../Content'));
+}
+
+gulp.task('scripts', ['page1-scripts', 'page2-scripts']);
+gulp.task('styles', ['page1-styles', 'page2-styles']);
+
+gulp.task('watch', function () {
+    gulp.watch('../Content/**/*.less', pages);
 });
 
-gulp.task('page2', function () {
-    return bundle('Page2');
+gulp.task('build', ['styles', 'scripts']);
+
+gulp.task('default', ['watch']);
+
+/* Add bundle here */
+
+gulp.task('page1-scripts', function () {
+    return bundleScript('page1');
 });
 
-gulp.task('scripts', ['page1', 'page2'], function() {
-    console.log('All scripts bundled!');
+gulp.task('page2-scripts', function () {
+    return bundleScript('page2');
 });
 
-var less = require('gulp-less');
-var path = require('path');
+gulp.task('page1-styles', function () {
+    return bundleStyle('page1');
+});
 
-gulp.task('less', function () {
-    return gulp.src('../Content/Style.less')
-      .pipe(less({
-          paths: [path.join(__dirname, 'node_modules')]
-      }))
-      .pipe(gulp.dest('../Content'));
+gulp.task('page2-styles', function () {
+    return bundleStyle('page2');
 });
